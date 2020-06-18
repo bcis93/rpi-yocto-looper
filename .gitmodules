@@ -6,3 +6,6 @@
 	path = layers/meta-raspberrypi
 	url = git://git.yoctoproject.org/meta-raspberrypi
 	branch = dunfell
+[submodule "layers/meta-cizies-looper"]
+	path = layers/meta-cizies-looper
+	url = git@github.com:bcis93/meta-cizies-looper.git

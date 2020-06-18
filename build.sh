@@ -11,6 +11,13 @@ else
 	echo "meta-raspberrypi layer already exists"
 fi
 
+if [ $layer_info -ne 0 ];then
+	echo "Adding meta-cizies-looper layer"
+	bitbake-layers add-layer ../layers/meta-cizies-looper
+else
+	echo "meta-cizies-looper layer already exists"
+fi
+
 set -e
-bitbake rpi-basic-image
+bitbake core-image-cizies-looper
 
