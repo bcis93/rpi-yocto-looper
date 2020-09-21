@@ -1,7 +1,10 @@
-git submodule update --init --recursive
-
 source layers/poky/oe-init-build-env
 
+if grep -q "ciziesdistro" ./conf/local.conf; then
+    echo -n ""
+else
+    echo "DISTRO=\"ciziesdistro\"" >> ./conf/local.conf
+fi
 if grep -q "MACHINE=\"raspberrypi0\"" ./conf/local.conf; then
     echo -n ""
 else
@@ -42,5 +45,5 @@ else
 fi
 
 set -e
-bitbake core-image-cizies-looper
+bitbake core-image-base
 
